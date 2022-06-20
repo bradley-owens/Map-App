@@ -17,10 +17,27 @@
       crossorigin=""
     ></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Roboto+Slab:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script defer src="script.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div id="map"></div>
+    <div class="application-container">
+      <div class="search-container">
+        <h1 class="app-title">Traveler</h1>
+        <input
+          type="search"
+          id="place-search-input"
+          placeholder="Start Searching..."
+        />
+      </div>
+      <div id="map"></div>
+    </div>
   </body>
 </html>
