@@ -29,13 +29,22 @@
   </head>
   <body>
     <div class="application-container">
-      <div class="search-container">
-        <h1 class="app-title">Traveler</h1>
-        <input
-          type="search"
-          id="place-search-input"
-          placeholder="Start Searching..."
-        />
+      <div class="user-container">
+        <div class="search-container">
+          <h1 class="app-title">Traveler</h1>
+          <input
+            type="search"
+            id="place-search-start"
+            placeholder="Choose Starting Point..."
+          />
+          <input
+            type="search"
+            id="place-search-destination"
+            placeholder="Choose Destination..."
+          />
+
+          <button class="submit">Go</button>
+        </div>
       </div>
       <div id="map"></div>
     </div>

@@ -7,36 +7,54 @@
 body {
   overscroll-behavior-y: none;
   font-family: "Roboto Slab", serif;
-  color: whitesmoke;
+  color: rgba(0, 0, 255, 0.722);
 }
 
-.application-container {
-  display: flex;
-}
-
-.search-container {
-  height: 100vh;
-  width: 30vw;
-  background-color: #42484d;
+.user-container {
+  background-color: white;
+  position: absolute;
+  top: 1rem;
+  left: 15rem;
+  z-index: 999;
+  max-width: max-content;
   padding: 2rem;
-  text-align: center;
-  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.916);
+  align-items: center;
+  justify-items: center;
+  border-radius: 10rem;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.616);
 }
 
 .app-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
   text-decoration: 2px solid underline;
 }
 
-#place-search-input {
-  font-size: 1.2rem;
-  padding: 0.5rem;
+.search-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#place-search-start,
+#place-search-destination {
+  font-size: 1rem;
+  padding: 0.3rem;
   border-radius: 10px;
   width: 70%;
+  border: 2px solid rgba(0, 0, 255, 0.722);
+}
+
+.submit {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 255, 0.422);
+  color: white;
 }
 
 #map {
   height: 100vh;
-  width: 70vw;
+  width: 100%;
+  position: relative;
 }
