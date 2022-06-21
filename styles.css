@@ -49,8 +49,9 @@ body {
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
-  background-color: rgba(0, 0, 255, 0.422);
+  background-color: rgba(0, 0, 255, 0.722);
   color: white;
+  font-weight: 700;
 }
 
 #map {
