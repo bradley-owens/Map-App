@@ -25,17 +25,38 @@
     <div class="application-container">
       <div class="user-container">
         <div class="search-container">
-          <h1 class="app-title">Traveler</h1>
-          <input type="search" id="place-search-start" placeholder="From..." />
+          <!-- <h1 class="app-title">Traveler</h1> -->
+          <input
+            type="search"
+            id="place-search-start"
+            class="input"
+            placeholder="From..."
+          />
           <input
             type="search"
             id="place-search-destination"
+            class="input"
             placeholder="To..."
           />
 
           <button class="submit">Go</button>
         </div>
+
+        <div class="transit-choice-container">
+          <select id="input-transit" class="input">
+            <option value="" disabled selected>What mode of travel?</option>
+            <option value="WALKING">Walking</option>
+            <option value="DRIVING">Driving</option>
+            <option value="TRANSIT">Public Transport</option>
+            <option value="BICYCLING">Bicycle</option>
+          </select>
+          <!-- <p id="WALKING" class="transit-choice">Walk</p>
+          <p id="DRIVING" class="transit-choice">Driving</p>
+          <p id="BICYCLING" class="transit-choice">Bike</p>
+          <p id="TRANSIT" class="transit-choice">PB</p> -->
+        </div>
       </div>
+
       <div id="map"></div>
     </div>
 

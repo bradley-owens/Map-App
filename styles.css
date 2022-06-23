@@ -33,15 +33,26 @@ body {
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding: 1rem;
 }
 
-#place-search-start,
-#place-search-destination {
-  font-size: 1rem;
+.input {
+  font-size: 1.2rem;
   padding: 0.3rem;
-  border-radius: 10px;
   width: 70%;
-  border: 2px solid rgba(0, 0, 255, 0.722);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.722);
+}
+
+.input:focus {
+  outline: none;
+  transition: 0.5s;
+  border-bottom: 3px solid rgba(0, 0, 255, 0.722);
+}
+
+::placeholder {
+  color: black;
 }
 
 .submit {
@@ -52,6 +63,47 @@ body {
   background-color: rgba(0, 0, 255, 0.722);
   color: white;
   font-weight: 700;
+}
+
+.submit:hover {
+  transition: 0.5s;
+  font-weight: 800;
+  background-color: white;
+  color: rgba(0, 0, 255, 0.722);
+  border: 2px solid rgba(0, 0, 255, 0.722);
+}
+
+.transit-choice-container {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-content: center;
+  margin-top: 0.5rem;
+}
+
+.transit-choice {
+  transition: 0.5s;
+  font-size: 1.1rem;
+  border: 3px solid rgba(0, 0, 255, 0.722);
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.transit-choice:hover {
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  background-color: rgba(0, 0, 255, 0.722);
+  transition: 0.5s;
+}
+
+.transit-chosen {
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  background-color: rgba(0, 0, 255, 0.722);
 }
 
 #map {
