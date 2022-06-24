@@ -27,6 +27,8 @@ body {
 .app-title {
   font-size: 2rem;
   text-decoration: 2px solid underline;
+  margin-top: -15px;
+  text-align: center;
 }
 
 .search-container {
