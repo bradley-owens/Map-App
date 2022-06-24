@@ -18,6 +18,11 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <script type="module" src="script.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0TPVHne5DbgXOLejsrTl2tTknx1K4ANY&libraries=places&callback=initMap"
+    ></script>
 
     <title>Document</title>
   </head>
@@ -27,13 +32,13 @@
         <h1 class="app-title">Traveler</h1>
         <div class="search-container">
           <input
-            type="search"
+            type="text"
             id="place-search-start"
             class="input"
             placeholder="From..."
           />
           <input
-            type="search"
+            type="text"
             id="place-search-destination"
             class="input"
             placeholder="To..."
@@ -55,10 +60,5 @@
 
       <div id="map"></div>
     </div>
-
-    <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0TPVHne5DbgXOLejsrTl2tTknx1K4ANY&callback=initMap"
-    ></script>
   </body>
 </html>

@@ -1,3 +1,10 @@
+const from = document.getElementById("place-search-start");
+const to = document.getElementById("place-search-destination");
+const formOfTravel = document.getElementById("input-transit");
+const getDirectionsBtn = document.querySelector(".submit");
+const searchContainer = document.querySelector(".search-container");
+
+//////////////////////////////////////
 // render map
 let map;
 
@@ -6,9 +13,18 @@ function initMap() {
     center: { lat: -33.908, lng: 151.212 },
     zoom: 14,
   });
+
+  let options = {
+    componentRestrictions: { country: ["au"] },
+    fields: ["geometry", "name"],
+  };
+
+  let autocompleteTo = new google.maps.places.Autocomplete(to, options);
+  let autocompleteFrom = new google.maps.places.Autocomplete(from, options);
 }
 window.initMap = initMap;
 
+///////////////////////////////////////
 // Get current location and add marker
 navigator.geolocation.getCurrentPosition(function (location) {
   let { latitude, longitude } = location.coords;
@@ -21,13 +37,8 @@ navigator.geolocation.getCurrentPosition(function (location) {
   });
 });
 
+////////////////////////////////////////
 // Get directions//////////////////
-
-const from = document.getElementById("place-search-start");
-const to = document.getElementById("place-search-destination");
-const formOfTravel = document.getElementById("input-transit");
-const getDirectionsBtn = document.querySelector(".submit");
-const searchContainer = document.querySelector(".search-container");
 
 //return search bar to normal opacity
 searchContainer.addEventListener("click", () => {
@@ -42,7 +53,6 @@ getDirectionsBtn.addEventListener("click", function () {
     origin: String(from.value),
     destination: String(to.value),
     travelMode: String(chosenTravel),
-    unitSystem: google.maps.UnitSystem.IMPERIAL,
   };
   let directionsService = new google.maps.DirectionsService();
   let directionsDisplay = new google.maps.DirectionsRenderer();
