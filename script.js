@@ -1,5 +1,4 @@
 // render map
-
 let map;
 
 function initMap() {
@@ -8,11 +7,9 @@ function initMap() {
     zoom: 14,
   });
 }
-
 window.initMap = initMap;
 
 // Get current location
-
 navigator.geolocation.getCurrentPosition(function (location) {
   console.log(location);
   let { latitude, longitude } = location.coords;
@@ -35,8 +32,35 @@ const getDirectionsBtn = document.querySelector(".submit");
 getDirectionsBtn.addEventListener("click", function () {
   const chosenTravel = formOfTravel.value;
 
-  //reset input fields
-  to.value = "";
-  from.value = "";
-  formOfTravel.value = "";
+  let directionsRequest = {
+    origin: String(from.value),
+    destination: String(to.value),
+    travelMode: String(chosenTravel),
+  };
+  let directionsService = new google.maps.DirectionsService();
+  let directionsDisplay = new google.maps.DirectionsRenderer();
+
+  directionsDisplay.setMap(map);
+
+  if (to === "" || from === "" || chosenTravel === "") {
+    alert("Please add your to and from with a mode of travel");
+  } else {
+    function calcRoute() {
+      directionsService.route(directionsRequest, function (result, status) {
+        if (status == "OK") {
+          directionsDisplay.setDirections(result);
+        } else {
+          alert("Failed to get directions! Check your inputted locations");
+
+          // reset input fields
+
+          to.value = "";
+          from.value = "";
+          formOfTravel.value = "";
+        }
+      });
+    }
+
+    calcRoute();
+  }
 });
