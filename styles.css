@@ -8,6 +8,7 @@ body {
   overscroll-behavior-y: none;
   font-family: "Roboto Slab", serif;
   color: rgba(0, 0, 255, 0.722);
+  position: relative;
 }
 
 .user-container {
@@ -15,6 +16,24 @@ body {
   position: absolute;
   top: 1rem;
   left: 15rem;
+  z-index: 999;
+  max-width: max-content;
+  padding: 2rem;
+  align-items: center;
+  justify-items: center;
+  border-radius: 10rem;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.616);
+}
+
+/* for route info */
+
+.active {
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  left: 50rem;
   z-index: 999;
   max-width: max-content;
   padding: 2rem;
