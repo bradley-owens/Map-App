@@ -75,23 +75,27 @@ getDirectionsBtn.addEventListener("click", function () {
     function calcRoute() {
       directionsService.route(directionsRequest, function (result, status) {
         if (status == "OK") {
+          // render route
           directionsDisplay.setDirections(result);
+
+          // change opacity of search component once route is rendered
           userContainer.style.opacity = 0.35;
 
-          // date and time
+          // Distance and Duration of route
 
           const output = document.getElementById("output");
+          const start = document.querySelector(".start");
+          const end = document.querySelector(".end");
+          const duration = document.querySelector(".duration");
+          const distance = document.querySelector(".distance");
+
+          // show output with information on route
           output.classList.add("active");
 
-          output.innerHTML =
-            "<div class='aler-info'> from: " +
-            from.value +
-            ". <br /> To: " +
-            to.value +
-            ". <br /> Distance: " +
-            result.routes[0].legs[0].distance.text +
-            "<br /> Duration: " +
-            result.routes[0].legs[0].duration.text;
+          start.textContent = `From: ${from.value}`;
+          end.textContent = `To: ${to.value}`;
+          distance.textContent = `Distance: ${result.routes[0].legs[0].distance.text}`;
+          duration.textContent = `Duration: ${result.routes[0].legs[0].duration.text}`;
         } else {
           alert("Failed to get directions! Check your inputted locations");
 

@@ -17,8 +17,8 @@ body {
   top: 1rem;
   left: 15rem;
   z-index: 999;
-  max-width: max-content;
-  padding: 2rem;
+  width: 40%;
+  padding: 2rem 1rem;
   align-items: center;
   justify-items: center;
   border-radius: 10rem;
@@ -29,22 +29,24 @@ body {
 
 .active {
   background-color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   position: absolute;
   top: 1rem;
-  left: 50rem;
+  left: 75rem;
   z-index: 999;
   max-width: max-content;
-  padding: 2rem;
-  align-items: center;
+  padding: 2rem 2.5rem;
+  align-items: flex-start;
   justify-items: center;
   border-radius: 10rem;
   box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.616);
+  transform: translateX(1rem);
+  transition: 0.5s;
 }
 
 .app-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-decoration: 2px solid underline;
   margin-top: -15px;
   text-align: center;
@@ -58,9 +60,9 @@ body {
 }
 
 .input {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 0.3rem;
-  width: 70%;
+  width: 40%;
   background: none;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 255, 0.722);
@@ -77,13 +79,14 @@ body {
 }
 
 .submit {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
   background-color: rgba(0, 0, 255, 0.722);
   color: white;
   font-weight: 700;
+  margin-left: 1.5rem;
 }
 
 .submit:hover {
@@ -104,7 +107,7 @@ body {
 
 .transit-choice {
   transition: 0.5s;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   border: 3px solid rgba(0, 0, 255, 0.722);
   border-radius: 5px;
   padding: 0.5rem;
