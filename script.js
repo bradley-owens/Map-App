@@ -30,16 +30,29 @@ window.initMap = initMap;
 
 ///////////////////////////////////////
 // Get current location and add marker
-navigator.geolocation.getCurrentPosition(function (location) {
-  let { latitude, longitude } = location.coords;
 
-  let marker = new google.maps.Marker({
-    position: { lat: latitude, lng: longitude },
-    map: map,
-    animation: google.maps.Animation.DROP,
-    draggable: true,
-  });
+const getCurrentLocation = new Promise(function (resolve, reject) {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function showLocation(location) {
+      let { latitude, longitude } = location.coords;
+      let userLocation = [latitude, longitude];
+
+      let marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map: map,
+        animation: google.maps.Animation.DROP,
+        draggable: true,
+      });
+
+      resolve(userLocation);
+    });
+  } else {
+    reject(alert("Could not find your location"));
+  }
 });
+
+//User Location
+getCurrentLocation.then((res) => console.log(res));
 
 ////////////////////////////////////////
 // Get directions//////////////////
