@@ -35,7 +35,6 @@ const getCurrentLocation = new Promise(function (resolve, reject) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function showLocation(location) {
       let { latitude, longitude } = location.coords;
-
       let userLocation = [latitude, longitude];
 
       let marker = new google.maps.Marker({
@@ -51,14 +50,6 @@ const getCurrentLocation = new Promise(function (resolve, reject) {
     reject(alert("Could not find your location"));
   }
 });
-
-//Users Location
-// getCurrentLocation.then((res) => {
-//   const lat = res[0];
-//   const lon = res[1];
-
-//   console.log(lat, lon);
-// });
 
 ////////////////////////////////////////
 // Get directions//////////////////
@@ -83,7 +74,7 @@ getDirectionsBtn.addEventListener("click", function () {
     let currentLocation = `${lat}, ${lon}`;
     const chosenTravel = formOfTravel.value;
 
-    if (from.value === "Current Location") {
+    if (from.value === "current location") {
       from.value = currentLocation;
     }
     let directionsRequest = {
