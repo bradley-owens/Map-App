@@ -17,7 +17,7 @@ body {
   top: 1rem;
   left: 15rem;
   z-index: 999;
-  width: 40%;
+  width: 40rem;
   padding: 2rem 1rem;
   align-items: center;
   justify-items: center;
@@ -32,16 +32,16 @@ body {
   font-size: 1.4rem;
   font-weight: bold;
   position: absolute;
-  top: 1rem;
-  left: 75rem;
+  top: 60rem;
+  left: 10rem;
   z-index: 999;
   max-width: max-content;
-  padding: 2rem 2.5rem;
+  padding: 2rem 3rem;
   align-items: flex-start;
   justify-items: center;
   border-radius: 10rem;
   box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.616);
-  transform: translateX(1rem);
+  transform: translateX(10rem);
   transition: 0.5s;
 }
 
